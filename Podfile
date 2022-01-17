@@ -6,14 +6,9 @@ target 'testmission' do
   use_frameworks!
 
   # Pods for testmission
-
-  target 'testmissionTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'testmissionUITests' do
-    # Pods for testing
-  end
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
 
 end
