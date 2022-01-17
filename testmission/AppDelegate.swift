@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
 //        DropDown.startListeningToKeyboard()
-//        let address = UserDefaults.standard.object(forKey: "address")
+        FirebaseApp.configure()
 //        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         // Override point for customization after application launch.
         return true

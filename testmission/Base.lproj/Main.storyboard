@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZn-AM-aht">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID(Your email)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZn-AM-aht">
                                 <rect key="frame" x="50" y="218" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P8U-8X-UzR"/>
@@ -30,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="50" id="K2a-rg-OvQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbY-3k-voR">
                                 <rect key="frame" x="172.5" y="144" width="69" height="24"/>
@@ -97,9 +98,70 @@
                     <view key="view" contentMode="scaleToFill" id="3mF-lw-46R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBJ-ev-geL">
+                                <rect key="frame" x="244" y="792" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="44Z-7e-pyQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="R18-wD-fwJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Suffle"/>
+                                <connections>
+                                    <action selector="tapSuffleButton:" destination="1Tr-tp-18C" eventType="touchUpInside" id="QzY-YP-UVh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOG-hS-X6V">
+                                <rect key="frame" x="50" y="792" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Ah1-58-A9u"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="gCe-az-j3f"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="gra-k9-ZSy"/>
+                                    <constraint firstAttribute="height" constant="50" id="xCt-oS-zU5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <connections>
+                                    <action selector="tapbackButton:" destination="1Tr-tp-18C" eventType="touchUpInside" id="Iqf-t5-ZO9"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pzU-fq-B1m">
+                                <rect key="frame" x="0.0" y="44" width="414" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="esO-Zm-LXo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oGv-gG-GoE">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="92y-e9-nxZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ROX-0h-LvK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EOG-hS-X6V" firstAttribute="leading" secondItem="ROX-0h-LvK" secondAttribute="leading" constant="50" id="OpT-aP-VEl"/>
+                            <constraint firstItem="pzU-fq-B1m" firstAttribute="leading" secondItem="ROX-0h-LvK" secondAttribute="leading" id="V2p-xG-rw5"/>
+                            <constraint firstItem="ROX-0h-LvK" firstAttribute="bottom" secondItem="fBJ-ev-geL" secondAttribute="bottom" constant="20" id="Woa-kq-lty"/>
+                            <constraint firstItem="ROX-0h-LvK" firstAttribute="trailing" secondItem="fBJ-ev-geL" secondAttribute="trailing" constant="50" id="bRj-YK-DEh"/>
+                            <constraint firstItem="ROX-0h-LvK" firstAttribute="trailing" secondItem="pzU-fq-B1m" secondAttribute="trailing" id="e4n-iR-Tlm"/>
+                            <constraint firstItem="ROX-0h-LvK" firstAttribute="bottom" secondItem="EOG-hS-X6V" secondAttribute="bottom" constant="20" id="fPz-R1-5aI"/>
+                            <constraint firstItem="pzU-fq-B1m" firstAttribute="top" secondItem="ROX-0h-LvK" secondAttribute="top" id="ox0-LO-pvo"/>
+                            <constraint firstItem="fBJ-ev-geL" firstAttribute="top" secondItem="pzU-fq-B1m" secondAttribute="bottom" constant="20" id="usK-um-h6v"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pzU-fq-B1m" id="nYf-aC-yE8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDd-Dg-t9O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,7 +189,7 @@
                                     <constraint firstAttribute="height" constant="50" id="2id-3b-nu4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Check" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQt-Q7-t8K">
                                 <rect key="frame" x="50" y="358" width="314" height="50"/>
@@ -135,7 +197,7 @@
                                     <constraint firstAttribute="height" constant="50" id="iyA-FO-OpE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ury-5A-k7W">
                                 <rect key="frame" x="50" y="428" width="314" height="50"/>

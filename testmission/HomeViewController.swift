@@ -7,10 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    private var collectionView: UICollectionView?
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//    private var collectionView: UICollectionView?
     private var imageView: UIImageView?
     private var isTap = false
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var cards = [Card(nameCard: "c01", status: false),
                  Card(nameCard: "c02", status: false),
@@ -91,23 +92,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                  Card(nameCard: "w13", status: false),
                  Card(nameCard: "w14", status: false),]
     
-//    var cardss: [String] = ["c01", "c02", "c03","c04", "c05", "c06","c07", "c08", "c09","c10", "c11", "c12","c13", "c14", "m00","m01", "m02", "m03","m04","m05", "m06", "m07","m08","m09", "m10", "m11","m12","m13", "m14", "m15","m16","m17", "m18", "m19", "m20","m21", "p01", "p02", "p03","p04", "p05", "p06","p07", "p08", "p09","p10", "p11", "p12","p13", "p14","s01", "s02", "s03","s04", "s05", "s06","s07", "s08", "s09","s10", "s11", "s12","s13", "s14","w01", "w02", "w03","w04", "w05", "w06","w07", "w08", "w09","w10", "w11", "w12","w13", "w14"]
-//
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.size.width/3.2, height:  view.frame.size.width/3.2)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical
+//        layout.itemSize = CGSize(width: view.frame.size.width/5, height:  view.frame.size.width/5)
+//        layout.sectionInset = UIEdgeInsetsMake(100, 0, 100, 0)
+    
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
+//        layout.sectionInset = UIEdgeInsetsMake(0, 0, 120, 0)
+//        collectionView = UICollectionView()
+//        collectionView?.frame = .zero
+//        collectionView?.collectionViewLayout = layout
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
+//        collectionView?.flo
         collectionView?.backgroundColor = .white
-        view.addSubview(collectionView!)
+        collectionView?.translatesAutoresizingMaskIntoConstraints = false
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(_:)))
         // Do any additional setup after loading the view.
         collectionView?.addGestureRecognizer(gesture)
+    }
+    
+    
+    @objc func suffleAction() {
+        
     }
     
     @objc func handleLongPressGesture(_ gesture: UILongPressGestureRecognizer) {
@@ -125,27 +135,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView?.frame = view.bounds
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        collectionView?.frame = view.bounds
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        isTap = !isTap
-        cards[indexPath.row].status = isTap
+//        isTap = !isTap
+        cards[indexPath.row].status = true
 //        data.status = true
 //        cards.remove(at: indexPath.row)
 //        cards.append(data)
         
         collectionView.reloadData()
-//        print(indexPath)
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-//        imageView = UIImageView(image: UIImage(named: cards[indexPath.row]))
-//
-//        cell.contentView.addSubview(imageView!)
-//        collectionView.reloadData()
-//        collectionView.reloadItems(at: [indexPath])
-//            collectionView.reloadSections(sections:)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -161,7 +163,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             imageView = UIImageView(image: UIImage(named: data.nameCard ?? "c01" ))
         }
        
-        imageView?.frame.size = CGSize(width: view.frame.size.width/3.2, height:  view.frame.size.width/3.2)
+        imageView?.frame.size = CGSize(width: view.frame.size.width/5, height:  view.frame.size.width/5)
             cell.contentView.addSubview(imageView!)
 
         return cell
@@ -170,12 +172,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width/3.2, height:  view.frame.size.width/3.2)
+        return CGSize(width: view.frame.size.width/5, height:  view.frame.size.width/5)
     }
     
     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForItemAt indexPath: IndexPath) -> UIEdgeInsets {
+
+                    return UIEdgeInsets(top: 0, left: 0, bottom: 120, right: 0)
+                }
     
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let item = cards.remove(at: sourceIndexPath.row)
@@ -183,16 +190,25 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 8, left: 5, bottom: 8, right: 5)
+           return UIEdgeInsets(top: 0, left: 0, bottom: 120, right: 0)
         }
-    /*
-    // MARK: - Navigation
+    
+    @IBAction func tapSuffleButton(_ sender: Any) {
+        for _ in cards {
+            if let i = cards.firstIndex(where: { $0.status == true }) {
+                cards[i].status = false
+            }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }
+
+        cards.shuffle()
+        collectionView.reloadData()
+        
     }
-    */
+    
+    @IBAction func tapbackButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
@@ -18,11 +19,36 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapLoginButton(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard
+        let username = idTextField.text,
+            username != "",
+        let password = passwordTextField.text,
+            password != ""
+        else
+        {
+            AlertController.showAlert(inViewController: self, title: "Alert", message: "Please fill out all fields.")
+            return
+        }
+
+
+        Auth.auth().signIn(withEmail: username, password: password) { (user, error) in
+            // ...
+            if(user != nil)
+            {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+                let register = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                register.modalPresentationStyle = .fullScreen
+                        self.present(register, animated: true, completion: nil)
+            }
+            if(error != nil)
+            {
+                AlertController.showAlert(inViewController: self, title: "Error", message: error!.localizedDescription)
+            }
+        }
+
+        
        
-        let register = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        register.modalPresentationStyle = .fullScreen
-                self.present(register, animated: true, completion: nil)
     }
     
     @IBAction func tapJoinButton(_ sender: Any) {
