@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3DE156FD27947AA400EA611A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE156FC27947AA400EA611A /* AppDelegate.swift */; };
-		3DE156FF27947AA400EA611A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE156FE27947AA400EA611A /* SceneDelegate.swift */; };
-		3DE1570127947AA400EA611A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1570027947AA400EA611A /* ViewController.swift */; };
 		3DE1570427947AA400EA611A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE1570227947AA400EA611A /* Main.storyboard */; };
 		3DE1570627947AA900EA611A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE1570527947AA900EA611A /* Assets.xcassets */; };
 		3DE1570927947AA900EA611A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE1570727947AA900EA611A /* LaunchScreen.storyboard */; };
 		3DE1571427947AAA00EA611A /* testmissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1571327947AAA00EA611A /* testmissionTests.swift */; };
 		3DE1571E27947AAA00EA611A /* testmissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1571D27947AAA00EA611A /* testmissionUITests.swift */; };
 		3DE1572027947AAA00EA611A /* testmissionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE1571F27947AAA00EA611A /* testmissionUITestsLaunchTests.swift */; };
+		3DE3B79227950D970009BDD6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3B79127950D970009BDD6 /* LoginViewController.swift */; };
+		3DE3B79427950DAA0009BDD6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3B79327950DAA0009BDD6 /* RegisterViewController.swift */; };
+		3DE3B79627950DBE0009BDD6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3B79527950DBE0009BDD6 /* HomeViewController.swift */; };
+		3DE3B798279517640009BDD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3B797279517640009BDD6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,6 @@
 /* Begin PBXFileReference section */
 		3DE156F927947AA400EA611A /* testmission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testmission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE156FC27947AA400EA611A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3DE156FE27947AA400EA611A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DE1570027947AA400EA611A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DE1570327947AA400EA611A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DE1570527947AA900EA611A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE1570827947AA900EA611A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,10 @@
 		3DE1571927947AAA00EA611A /* testmissionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testmissionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE1571D27947AAA00EA611A /* testmissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testmissionUITests.swift; sourceTree = "<group>"; };
 		3DE1571F27947AAA00EA611A /* testmissionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testmissionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DE3B79127950D970009BDD6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3DE3B79327950DAA0009BDD6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3DE3B79527950DBE0009BDD6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3DE3B797279517640009BDD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				3DE156FC27947AA400EA611A /* AppDelegate.swift */,
-				3DE156FE27947AA400EA611A /* SceneDelegate.swift */,
-				3DE1570027947AA400EA611A /* ViewController.swift */,
 				3DE1570227947AA400EA611A /* Main.storyboard */,
 				3DE1570527947AA900EA611A /* Assets.xcassets */,
 				3DE1570727947AA900EA611A /* LaunchScreen.storyboard */,
 				3DE1570A27947AA900EA611A /* Info.plist */,
+				3DE3B79127950D970009BDD6 /* LoginViewController.swift */,
+				3DE3B797279517640009BDD6 /* GoogleService-Info.plist */,
+				3DE3B79327950DAA0009BDD6 /* RegisterViewController.swift */,
+				3DE3B79527950DBE0009BDD6 /* HomeViewController.swift */,
 			);
 			path = testmission;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE1570927947AA900EA611A /* LaunchScreen.storyboard in Resources */,
+				3DE3B798279517640009BDD6 /* GoogleService-Info.plist in Resources */,
 				3DE1570627947AA900EA611A /* Assets.xcassets in Resources */,
 				3DE1570427947AA400EA611A /* Main.storyboard in Resources */,
 			);
@@ -258,9 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE1570127947AA400EA611A /* ViewController.swift in Sources */,
+				3DE3B79427950DAA0009BDD6 /* RegisterViewController.swift in Sources */,
+				3DE3B79227950D970009BDD6 /* LoginViewController.swift in Sources */,
 				3DE156FD27947AA400EA611A /* AppDelegate.swift in Sources */,
-				3DE156FF27947AA400EA611A /* SceneDelegate.swift in Sources */,
+				3DE3B79627950DBE0009BDD6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

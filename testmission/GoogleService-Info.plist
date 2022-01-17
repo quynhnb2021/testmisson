@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>39824518403-qjl8fcbe7aqiimjpu34htv8ff4ndjjnh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.39824518403-qjl8fcbe7aqiimjpu34htv8ff4ndjjnh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAKlHhDWiJJrOYy9rIpra6MECS7U8X8afc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>39824518403</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>conceptcube.testmission</string>
+	<key>PROJECT_ID</key>
+	<string>testmisson</string>
+	<key>STORAGE_BUCKET</key>
+	<string>testmisson.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:39824518403:ios:e27af161a8159e78704d36</string>
+</dict>
+</plist>
